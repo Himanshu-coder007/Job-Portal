@@ -4,9 +4,10 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "../ui/button";
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import { toast } from 'sonner'
+import { USER_API_END_POINT } from "@/utils/constant";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -14,7 +15,7 @@ const Login = () => {
     password: "",
     role: "",
   });
-
+ const navigate = useNavigate();
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
 }
@@ -86,10 +87,6 @@ const submitHandler = async (e) => {
                 <Label htmlFor="r2">Recruiter</Label>
               </div>
             </RadioGroup>
-            <div className="flex items-center gap-2">
-              <Label>Profile</Label>
-              <Input accept="image/*" type="file" className="cursor-pointer" />
-            </div>
           </div>
           <Button type="submit" className="w-full my-4">
             Login
