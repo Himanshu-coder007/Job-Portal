@@ -19,8 +19,8 @@ const filterData =[
 ]
 const FilterCard = () => {
   return (
-    <div>
-      <h1>
+    <div className='w-full bg-white p-3 rounded-md'>
+      <h1 className='font-bold text-lg'>
         Filter Jobs
       </h1>
       <hr className='mt-3'/>
