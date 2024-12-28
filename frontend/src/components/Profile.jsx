@@ -65,7 +65,7 @@ const Profile = () => {
           </div>
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
-          <Label className="text-md font-bold">Resume</Label>
+          <Label className="text-md font-bold">Resume (upload resume in .png format)</Label>
           {isResume ? (
             <a
               target="blank"
