@@ -24,7 +24,7 @@ export const registerCompany = async (req, res) => {
     });
 
     return res.status(201).json({
-      message: "Company registerd successfully",
+      message: "Company registered successfully.",
       company,
       success: true,
     });
@@ -32,7 +32,6 @@ export const registerCompany = async (req, res) => {
     console.log(error);
   }
 };
-
 export const getCompany = async (req, res) => {
   try {
     const userId = req.id; // logged in user id
@@ -51,8 +50,7 @@ export const getCompany = async (req, res) => {
     console.log(error);
   }
 };
-
-//get company by id
+// get company by id
 export const getCompanyById = async (req, res) => {
   try {
     const companyId = req.params.id;
@@ -60,12 +58,12 @@ export const getCompanyById = async (req, res) => {
     if (!company) {
       return res.status(404).json({
         message: "Company not found.",
-        succes: false,
+        success: false,
       });
     }
     return res.status(200).json({
       company,
-      succes: true,
+      success: true,
     });
   } catch (error) {
     console.log(error);

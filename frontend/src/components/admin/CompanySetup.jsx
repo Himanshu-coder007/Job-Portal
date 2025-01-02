@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from '../shared/Navbar'
-import { Button } from '../ui/button'
-import { ArrowLeft, Loader2 } from 'lucide-react'
-import { Label } from '../ui/label'
-import { Input } from '../ui/input'
-import axios from 'axios'
-import { COMPANY_API_END_POINT } from '@/utils/constant'
-import { useNavigate, useParams } from 'react-router-dom'
-import { toast } from 'sonner'
-import { useSelector } from 'react-redux'
-import useGetCompanyById from '@/hooks/useGetCompanyById'
-
+import React, { useEffect, useState } from "react";
+import Navbar from "../shared/Navbar";
+import { Button } from "../ui/button";
+import { ArrowLeft, Loader2 } from "lucide-react";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import axios from "axios";
+import { COMPANY_API_END_POINT } from "@/utils/constant";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "sonner";
+import { useSelector } from "react-redux";
+import useGetCompanyById from "@/hooks/useGetCompanyById";
 
 const CompanySetup = () => {
   const params = useParams();
@@ -22,7 +21,7 @@ const CompanySetup = () => {
     location: "",
     file: null,
   });
-  const {singleCompany} = useSelector(store=>store.company);
+  const { singleCompany } = useSelector((store) => store.company);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -71,13 +70,13 @@ const CompanySetup = () => {
 
   useEffect(() => {
     setInput({
-        name: singleCompany.name || "",
-        description: singleCompany.description || "",
-        website: singleCompany.website ||"",
-        location: singleCompany.location || "",
-        file: singleCompany.file || null
-    })
-},[singleCompany]);
+      name: singleCompany.name || "",
+      description: singleCompany.description || "",
+      website: singleCompany.website || "",
+      location: singleCompany.location || "",
+      file: singleCompany.file || null,
+    });
+  }, [singleCompany]);
 
   return (
     <div>
@@ -89,7 +88,6 @@ const CompanySetup = () => {
               onClick={() => navigate("/admin/companies")}
               variant="outline"
               className="flex items-center gap-2 text-gray-500 font-semibold"
-              // Add your route here
             >
               <ArrowLeft />
               <span>Back</span>
@@ -142,7 +140,6 @@ const CompanySetup = () => {
               />
             </div>
           </div>
-
           {loading ? (
             <Button className="w-full my-4">
               {" "}
