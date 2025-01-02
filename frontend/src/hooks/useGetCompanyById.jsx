@@ -25,4 +25,4 @@ const useGetCompanyById = (companyId) => {
   }, [companyId, dispatch]); // Include dispatch in dependency array
 };
 
-export default useGetAllJobs;
+export default useGetCompanyById;
