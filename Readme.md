@@ -10,10 +10,15 @@ Create a .env file in backend directory
 
 Step 3:
 add the following enviroment variables to the file with their corresponding values 
+
 PORT = 8080 
+
 MONGO_URI = "url" //localhost or mongodb atlas
+
 SECRET_KEY =<SECRET_KEY> // you will get it by registering on a cloudinary website
+
 EMAIL = --email-- 
+
 EMAIL_PASSWORD = --password--
 
 Step 4:
