@@ -50,8 +50,6 @@ const Navbar = () => {
                                 </>
                             )
                         }
-
-
                     </ul>
                     {
                         !user ? (
@@ -79,14 +77,18 @@ const Navbar = () => {
                                         </div>
                                         <div className='flex flex-col my-2 text-gray-600'>
                                             {
-                                                user && user.role === 'student' && (
+                                                user && user.role === 'student' ? (
                                                     <div className='flex w-fit items-center gap-2 cursor-pointer'>
                                                         <User2 />
                                                         <Button variant="link"> <Link to="/profile">View Profile</Link></Button>
                                                     </div>
+                                                ) : (
+                                                    <div className='flex w-fit items-center gap-2 cursor-pointer'>
+                                                        <User2 />
+                                                        <Button variant="link"> <Link to="/admin/profile">View Profile</Link></Button>
+                                                    </div>
                                                 )
                                             }
-
                                             <div className='flex w-fit items-center gap-2 cursor-pointer'>
                                                 <LogOut />
                                                 <Button onClick={logoutHandler} variant="link">Logout</Button>
@@ -97,12 +99,10 @@ const Navbar = () => {
                             </Popover>
                         )
                     }
-
                 </div>
             </div>
-
         </div>
     )
 }
 
-export default Navbar
+export default Navbar;
