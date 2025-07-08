@@ -4,7 +4,7 @@ import { RadioGroup, RadioGroupItem } from './ui/radio-group'
 import { Label } from './ui/label'
 import { useDispatch } from 'react-redux'
 import { setSearchedQuery } from '@/redux/jobSlice'
-import { Filter, X } from 'lucide-react'
+import { Filter, X, MapPin, Briefcase, IndianRupee } from 'lucide-react'
 
 const filterData = [
     {
